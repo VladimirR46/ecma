@@ -15,5 +15,8 @@ setup(name='ecma',
       author_email='vantipovm@gmail.com',
       packages=['ecma'],
       package_dir={'ecma': 'ecma'},
-      install_requires=[],
+      install_requires=[
+        'numpy',
+        'scikit-learn'
+      ],
       zip_safe=False)
