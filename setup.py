@@ -17,6 +17,7 @@ setup(name='ecma',
       package_dir={'ecma': 'ecma'},
       install_requires=[
         'numpy',
-        'scikit-learn'
+        'scikit-learn',
+        'scipy'
       ],
       zip_safe=False)
