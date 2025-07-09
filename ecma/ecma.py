@@ -134,7 +134,7 @@ def ecma(xpos, ypos, freq = 500, n_delay = 5, r2_th = 0.6):
     indices = np.where(r2_max > r2_th)[0]
     sac_filtered = {key: [value[i] for i in indices] for key, value in sac_info.items()}
 
-    return total_weights, total_weights_corr, sac_filtered
+    return sac_filtered
 
 def bool2bounds(b):
     b = np.array(np.array(b, dtype = bool), dtype=int)
