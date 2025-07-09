@@ -8,7 +8,10 @@ from sklearn.metrics import r2_score
 
 
 def f(t):
-    return np.where(t >= 0, t + 0.25 * np.exp(-2 * t), 0.25 * np.exp(2 * t))
+    with np.errstate(over='ignore'):
+        result = np.where(t >= 0, t + 0.25 * np.exp(-2 * t), 0.25 * np.exp(2 * t))
+    return result
+    #return np.where(t >= 0, t + 0.25 * np.exp(-2 * t), 0.25 * np.exp(2 * t))
 
 def saccadic_waveform(t, eta, c, tau):
     waveform = c*f(eta*t/c) - c*f(eta*(t-tau)/c)
